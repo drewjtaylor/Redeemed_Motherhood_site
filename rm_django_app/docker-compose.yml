@@ -1,8 +1,8 @@
 version: '3.4'
 
 services:
-  redeemedmotherhoodsite:
-    image: redeemedmotherhoodsite
+  rmdjangoapp:
+    image: rmdjangoapp
     build:
       context: .
       dockerfile: ./Dockerfile
