@@ -35,7 +35,12 @@ services:
       context: .
       dockerfile: ./Dockerfile
     ports:
-      - 8000:8000
+      - "8000:8000"
+    command: python manage.py runserver 0.0.0.0:8000
+    environment:
+      - POSTGRES_NAME=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=admin123
     depends_on:
       - pg
 volumes:
