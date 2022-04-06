@@ -28,7 +28,7 @@ services:
       - "5433:5433"
     depends_on:
       - pg
-  rmsjangoapp:
+  rmdjangoapp:
     container_name: django_rms_app
     image: rmdjangoapp
     build:
