@@ -4,6 +4,9 @@
 # Database content kept off of github
 data
 
+# Diagram
+*.drawio
+
 
 # Beginning of auto-completed section by github
 # Byte-compiled / optimized / DLL files
