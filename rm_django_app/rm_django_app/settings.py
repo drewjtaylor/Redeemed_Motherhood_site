@@ -38,8 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-
-    # Add install apps for project
+    # Add/install apps for project
     'main_app',
 ]
 
