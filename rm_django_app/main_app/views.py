@@ -20,3 +20,6 @@ def videos(request):
 
 def invoices(request):
     return HttpResponse("This is the invoices page.")
+
+def try_template(request):
+    return HttpResponse(f"")
