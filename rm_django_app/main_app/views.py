@@ -14,12 +14,8 @@ def index(request):
 def clients(request):
     return HttpResponse("This is the clients page.")
 
-def videos(request):
-    video_list = Video.objects.all()
-    return HttpResponse("This is the video page")
-
 def invoices(request):
     return HttpResponse("This is the invoices page.")
 
-def try_template(request):
-    return HttpResponse(f"")
+# def try_template(request):
+#     return HttpResponse(f"")
