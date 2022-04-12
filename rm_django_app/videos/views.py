@@ -7,3 +7,7 @@ from main_app.models import Client, Video
 def index(request):
     video_list = Video.objects.all()
     return HttpResponse("This is the video index page")
+
+def viewvid(request, video_id):
+    context = {'video_id': video_id}
+    return render(request, 'videos/viewvid.html', context)

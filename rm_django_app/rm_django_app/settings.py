@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 
     # Add/install apps for project
     'main_app',
+    'videos',
 ]
 
 MIDDLEWARE = [
