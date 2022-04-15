@@ -1,5 +1,6 @@
 bug_inducing_migrations
 *Report.docx
+*.pem
 
 # VScode files
 .vscode

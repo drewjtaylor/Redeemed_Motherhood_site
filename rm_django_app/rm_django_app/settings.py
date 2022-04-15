@@ -84,7 +84,7 @@ DATABASES = {
         'USER': 'postgres',
         'PASSWORD': '',
         # If inside docker, HOST must be changed to "pg" (or whatever the database is in docker compose) (127.0.0.1 if out of docker)
-        'HOST': '127.0.0.1',
+        'HOST': 'pg',
         'PORT': 5432
     }
 }
