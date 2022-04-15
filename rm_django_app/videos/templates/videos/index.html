@@ -1,0 +1,9 @@
+
+
+<h1>video index list</h1>
+
+    <ul>
+        {% for video in video_list %}
+            <li><a href="../{{ video.id }}/">{{ video.title }}</a></li>
+        {% endfor %}
+    </ul>
