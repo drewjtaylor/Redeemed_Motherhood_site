@@ -23,6 +23,7 @@ class Provider(models.Model):
 class Video(models.Model):
     title = models.CharField(max_length=35)
     link = models.CharField(max_length=100)
+    embed_link = models.CharField(max_length=100, default=True)
 
 class Invoice(models.Model):
     amount = models.DecimalField(max_digits=5, decimal_places=2, default=0.00)
