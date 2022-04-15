@@ -13,6 +13,6 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='video',
             name='embed_link',
-            field=models.CharField(default=True, max_length=100),
+            field=models.CharField(max_length=100, null=True),
         ),
     ]
