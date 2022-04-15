@@ -13,12 +13,12 @@
   
   <body>
     <h1>
-        This is a test using the class 1, session 1 video
+        This is a test and should display {{ video.title }} in an embedded video
     </h1>
     
-    <!--Link to video 1-->
+    <!--Link to video-->
     <div id = video-box, class=video-box>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/uRV0aqMYA74" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  
+        <iframe width="560" height="315" src="{{ video.embed_link }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  
     </div>
 </body>
 </html>
