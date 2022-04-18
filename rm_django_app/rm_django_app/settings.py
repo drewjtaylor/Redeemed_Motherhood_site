@@ -41,6 +41,9 @@ INSTALLED_APPS = [
     # Add/install apps for project
     'main_app',
     'videos',
+
+    # From django-paypal (https://django-paypal.readthedocs.io/en/stable/standard/ipn.html)
+    'paypal.standard.ipn',
 ]
 
 MIDDLEWARE = [
@@ -84,7 +87,7 @@ DATABASES = {
         'USER': 'postgres',
         'PASSWORD': '',
         # If inside docker, HOST must be changed to "pg" (or whatever the database is in docker compose) (127.0.0.1 if out of docker)
-        'HOST': 'pg',
+        'HOST': '127.0.0.1g',
         'PORT': 5432
     }
 }
