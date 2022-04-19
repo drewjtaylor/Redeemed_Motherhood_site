@@ -1,5 +1,7 @@
+{% extends 'main_app/header.html' %}
 
 
+{% block content %}
 <h1>video index list</h1>
 
     <ul>
@@ -7,3 +9,4 @@
             <li><a href="../{{ video.id }}/">{{ video.title }}</a></li>
         {% endfor %}
     </ul>
+{% endblock %} 
