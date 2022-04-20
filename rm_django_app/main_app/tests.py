@@ -1,15 +1,34 @@
 from django.test import TestCase
-from .models import Client
+from django.test import Client
+from django.urls import reverse
+
+#Made a special kind of user called "client", not knowing there was a test client. The model, "Client", is userclient in these tests
+from .models import Client as userclient
+
 import pytest
 from django.core import serializers
 import json
 
 # Create your tests here.
 
+class UrlTests(TestCase):
+    
+    def test_home_page_with_no_url(self):
+        client = Client()
+        response = client.get('/')
+        self.assertIs(response.status_code == 200, True)
+
+    def test_signup_page(self):
+        client = Client()
+        response = client.get(reverse('main_app:signup'))
+        self.assertIs(response.status_code == 200, True)
+
+
+###Pytest tests created as part of Nucamp project
 #Fixure client to be used for testing
 @pytest.fixture
 def client():
-    fakeclient = Client(
+    fakeclient = userclient(
         password="das8d97a@##", 
         username="fake_user", 
         first_name="Andrea", 
@@ -27,12 +46,12 @@ def client():
 @pytest.mark.django_db
 def test_add_client(client):
     client.save()
-    assert Client.objects.filter(username="fake_user")
+    assert userclient.objects.filter(username="fake_user")
 
 @pytest.mark.django_db
 def test_serialize_client(client):
     client.save()
-    data = serializers.serialize('json', Client.objects.filter(username="fake_user"))
+    data = serializers.serialize('json', userclient.objects.filter(username="fake_user"))
     pydata = json.loads(data)
     assert 'fake_user' == (pydata[0]['fields']['username'])
 
