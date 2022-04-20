@@ -1,7 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth import login, authenticate
-from django.contrib.auth.forms import UserCreationForm
 from .forms import SignUpForm
 
 
@@ -12,18 +11,6 @@ from .models import Client, Provider, Video, Invoice
 
 def home(request):
     return render(request, 'home.html')
-
-def index(request):
-    return HttpResponse("This is the index page.")
-
-def clients(request):
-    return HttpResponse("This is the clients page.")
-
-def invoices(request):
-    return HttpResponse("This is the invoices page.")
-
-# def try_template(request):
-#     return HttpResponse(f"")
 
 
 # Signup form for creating new users

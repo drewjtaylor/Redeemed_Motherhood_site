@@ -3,10 +3,10 @@ from django.conf.urls import url
 
 from . import views
 
+
+app_name = "main_app"
+
 urlpatterns = [
     path('', views.home, name='home'),
-    path('index/', views.index, name='index'),
-    path('clients/', views.clients, name='clients'),
-    path('invoices/', views.invoices, name='invoices'),
     url('signup/', views.signup, name='signup'),
 ]
