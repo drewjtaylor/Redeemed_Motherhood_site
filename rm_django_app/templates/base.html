@@ -1,5 +1,6 @@
 {% load static %}
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,10 +9,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href= "{% static 'css/bootstrap.css' %}">
     <link rel="stylesheet" href= "{% static 'css/custom.css' %}">
+    <link rel="stylesheet" href= "{% static 'css/footer.css' %}">
     <title>Redeemed Motherhood</title>
+
+    {% include 'header.html' %}
+
 </head>
 <body>
-    <h1>This is from the base.html file</h1>
 
     {% block content %}
 
@@ -21,3 +25,4 @@
 
 </body>
 </html>
+
