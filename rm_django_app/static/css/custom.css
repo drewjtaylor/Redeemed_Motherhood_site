@@ -1,3 +1,39 @@
-h1 {
-    color: red;
+.rightbanner {
+    background-image: linear-gradient(to right, #8ACEFF, #AF90F5, #FA7DCC);
 }
+
+
+.leftbanner {
+    background-image: linear-gradient(to left, #8ACEFF, #AF90F5, #FA7DCC);
+}
+
+.footerbackground {
+    background-image: #8ACEFF
+}
+
+
+
+/* .rightbanner {
+    background-image: linear-gradient(to right, #8ACEFF, #AF90F5, #FA7DCC);
+    background-size: 200% 200%;
+    animation: gradient 15s ease infinite;
+}
+
+
+.leftbanner {
+    background-image: linear-gradient(to left, #8ACEFF, #AF90F5, #FA7DCC);
+    background-size: 200% 200%;
+    animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+} */
