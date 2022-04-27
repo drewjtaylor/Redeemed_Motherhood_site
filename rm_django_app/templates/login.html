@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+
+<h1>The login.html file starts here.</h1>
+<br>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-12 text-center">
+            <p>Welcome to Redeemed Mommyhood!</p>
+            <p>If you don't yet have an account, please sign up here using the form below, or sign in using Facebook/Google</p>
+        </div>
+    <div class="row">
+        <div class="col-3">
+            <a href="{% url 'main_app:signup' %}" class="btn btn-primary">Create a new account</a>
+        <div class="col-3"></div>
+            <a href="#" class="btn btn-primary">Sign in using Facebook</a>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+{% endblock %} 

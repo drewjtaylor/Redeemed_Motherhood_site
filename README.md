@@ -5,11 +5,14 @@
 This repository has been set up as I learn to create a functioning website for "Redeemed Motherhood," the company belonging to my wife, Andrea.
 
 ## What is Redeemed Motherhood?
-Redeemed Motherhood is the name of my wife's company where she teaches birth and early childcare classes. She mostly works with a local birth center. Due to COVID retrictions enacted previously in Florida, her birth center asked her to develop an online option. Andrea was able to make a video series which proved a great option when in-person classes were not allowed, and still continues to serve as a last resort now, where even though restrictions are ended, there are still occasional emergencies or reasons people cannot attend in person.
+Redeemed Motherhood is the name of my wife's company where she teaches birth classes and early childcare classes. She mostly works with a local birth center. Due to COVID retrictions enacted previously in Florida, her birth center asked her to develop an online option. Andrea was able to make a video series which proved a great option when in-person classes were not allowed, and still continues to serve as a last resort for the birth center now. Even though they prefer clients meet in person, there are still outlier cases where they need a quick way for someone to take the classes without waiting for them to be scheduled. 
 
-Redeemed Motherhood got its name becuase of my wife's story. She had a difficult first birth in a hospital, but was able to have a redemptive experience at the birth center where she is now affiliated--the whole story will eventually be on the website. Long story short, she is now passionate about sharing the knowledge she wishes she had for that first birth, and loves to share in the lives of soon-to-be mothers.
+Now that the work of recording some videos is finished, the thought occurred to us that making an online, purchasable course may be a source of income. We are fortunate to have the birth center near us, but not all areas have this luxury, and we intend to sek out other birth centers and hospitals that may be willing to view her material, and allow it to count for any requirements they have for mothers at their respective locations.
 
-There are also many places where there may not be a birth center nearby at all, let alone one as developed as the one where our children have been born. In light of this, we are looking into developing an online course that may be available to anyone, and provide some side income as well.
+Not to mention this will eventually become a primary part of my portfolio seeking employment as a developer.
+
+Redeemed Motherhood got its name becuase of my wife's story. She had a difficult first birth in a hospital but was able to have a redemptive experience at the birth center where she is now affiliated--the whole story will eventually be on the website. Long story short, she is now passionate about sharing the knowledge she wishes she had for that first birth, and loves to share in the lives of soon-to-be mothers.
+
 
 ## Implementation
 
@@ -17,24 +20,30 @@ There are also many places where there may not be a birth center nearby at all, 
 |---------------|-------------|
 |Postgres|Set up tables and logic|
 |Django|Set up paths, connect database|
-|Front end|Figure out details later|
+|More Django|Set up user authentication|
+|Front end|Use Bootstrap to style pages|
 
 ## Back end
-Using Django and postgres, my first goal is to set up the backend for the site. It will be capable of tracking client information.
+Using Django and postgres, my first goal is to set up the backend for the site. It will be capable of tracking client information, knowing which clients are allowed to view which video pages, letting users create new accounts, and eventually be capable of automatically sending emails for appropriate events (user creation, successful course purchase, etc.)
 
 ### Features to keep in mind/add:
 - Clients can create an account
 - Clients can be given access to specific videos (automatically if they have purchased access)
-- Videos that have been created can be linked to or downloaded 
 - Invoices can be sent by owner to email address on file (and/or text)
-- Invoices can be paid by clients
+- Invoices can be paid by clients (initially using Paypal, eventually using cards directly as well)
 
 ### Project status for Nucamp
-As I will be taking the front-end courses later, I did not try to do much as far as a "paint-job" for the templates. The primary thing I wanted to work on was minor functionality in order to test successful deployment to AWS.
+The project was successfully deployed to AWS to graduate the back-end course. However, to ensure I didn't incur costs, it is currently taken down from there.
 
 ### Test
-To test the current functionality, I used the built-in admin page to add information to the database for two of her videos already uploaded to you-tube.
+After trying a couple simple "pytest" versions of tests and the django tests built on that framework, I have decided to stick with the django tests. 
+
+To run tests, simply run "python manage.py test" from the folder with "manage.py" to run all django tests. 
+
+To actually see the site for yourself, run "python manage.py runserver" from the folder with "manage.py" to start it up. 
+
+To test the current functionality, I used the built-in admin page to add information to the database for two videos which are available through YouTube.
 
 Visiting "base_url/videos/index" where "base_url" is whatever domain AWS assigns should show a list of videos dynamically generated by a Django template using a for loop on all "Video" objects.
 
-Then, clicking on a video in the list should link to base_url/videos/primary_key_for_clicked_video, and a basic display page will pop up with that video embedded.
+Then, clicking on a video in the list should link to base_url/videos/<primary_key_for_clicked_video>, and a basic display page will pop up with that video embedded.

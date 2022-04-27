@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+
+<h1>This text is in the home.html file.</h1>
+<br>
+
+<a href="{% url 'main_app:signup' %}" class="btn btn-primary">This will lead to the signup page. It uses a bootstrap primary button</a>
+
+<button type="button" class="btn btn-secondary">This is a button that does nothing yet</button>
+
+{% endblock %} 
