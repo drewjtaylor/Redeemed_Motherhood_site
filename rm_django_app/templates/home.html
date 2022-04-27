@@ -6,11 +6,10 @@
 
 
 <h1>This text is in the home.html file.</h1>
-<h1>If this text is red, then the custom CSS is coming through</h1>
 <br>
 
-<button type="button" class="btn btn-primary">This is a bootstrap button</button>
+<a href="{% url 'main_app:signup' %}" class="btn btn-primary">This will lead to the signup page. It uses a bootstrap primary button</a>
 
-<button type="button" class="btn btn-secondary">Secondary bootstrap button</button>
+<button type="button" class="btn btn-secondary">This is a button that does nothing yet</button>
 
 {% endblock %} 
