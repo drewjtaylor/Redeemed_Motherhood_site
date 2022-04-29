@@ -11,8 +11,11 @@ def index(request):
     return render(request, 'videos/index.html', context)
 
 @login_required
-@user_passes_test(lambda u: u.groups.filter(name='BoL_series').count() == 0, login_url='/myapp/denied/')
+@user_passes_test(lambda u: u.groups.filter(name='BoL_series').count() == 0, login_url='/login/', redirect_field_name="/videos/denied/")
 def viewvid(request, video_id):
     video = Video.objects.get(pk=video_id)
     context = {'video_id': video_id, 'video': video}
     return render(request, 'videos/viewvid.html', context)
+
+def denied(request):
+    return render(request, 'videos/denied.html')
