@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth import login, authenticate
 from .forms import SignUpForm
-
+from django.contrib.auth.forms import AuthenticationForm
 
 
 from .models import Client, Provider, Video, Invoice
@@ -30,7 +30,8 @@ def signup(request):
     return render(request, 'signup.html', {'form': form})
 
 def login(request):
-    return render(request, 'login.html')
+    form = AuthenticationForm
+    return render(request, 'login.html', {'form': form})
 
 def authtestpage(request):
     user = authenticate(username="testuser", password="testpassword")
