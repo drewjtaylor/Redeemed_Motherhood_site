@@ -4,6 +4,7 @@ from django.contrib.auth import login, authenticate
 from .forms import SignUpForm
 
 
+
 from .models import Client, Provider, Video, Invoice
 
 
@@ -30,3 +31,10 @@ def signup(request):
 
 def login(request):
     return render(request, 'login.html')
+
+def authtestpage(request):
+    user = authenticate(username="testuser", password="testpassword")
+    if user is not None:
+        return HttpResponse("The user WAS authenticated")
+    else:
+        return HttpResponse("The user was not authenticated")
