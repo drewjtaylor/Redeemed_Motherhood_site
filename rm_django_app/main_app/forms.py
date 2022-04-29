@@ -5,6 +5,10 @@ from .models import Client
 
 
 class SignUpForm(UserCreationForm):
+    """
+    A custom version of UserCreationForm
+    Adds additional fields based on BoL's intake form
+    """
     first_name = forms.CharField(max_length=30, required=False, help_text='Optional.')
     last_name = forms.CharField(max_length=30, required=False, help_text='Optional.')
     email = forms.EmailField(max_length=100, help_text='Required. Inform a valid email address.')
