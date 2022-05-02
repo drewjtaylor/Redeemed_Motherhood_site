@@ -24,7 +24,7 @@ urlpatterns = [
     path('', include(('main_app.urls', 'main_app'), namespace='main_app')),
     path('videos/', include(('videos.urls', 'videos'), namespace='videos')),
 
-    # Include default django views for accounts
+    # Include default django views for accounts. Need to add templates in registration
     path('accounts/', include('django.contrib.auth.urls')),
     # This provides the following default views:
     # accounts/login/ [name='login']
